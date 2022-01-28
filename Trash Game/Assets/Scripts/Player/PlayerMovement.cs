@@ -2,47 +2,57 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour { 
-
-    [Header("Components")]
-    Rigidbody m_Rigidbody;
-
-    [Header("MovementVariables")]
-    Vector3 moveDirection;
-    public float movementSpeed;
-    public float jumpForce;
-
-
-    // Start is called before the first frame update
+public class PlayerMovement : MonoBehaviour
+{
+    [SerializeField]float speed = 1.0f;
+    [SerializeField] float jumpForce = 1.0f;
+    Vector3 jump = new Vector3(0, 1, 0);
+    public bool isGrounded;
+    Rigidbody rigidbody;
+    Vector3 movementDirection;
     void Start()
     {
-        m_Rigidbody = GetComponent<Rigidbody>();
+        isGrounded = false;
+        rigidbody = this.GetComponent<Rigidbody>();
+        Physics.gravity = new Vector3(0f, -30f, 0f);
     }
 
-    // Update is called once per frame
-    void Update()
+
+    void FixedUpdate()
     {
-        MovementInput();
+      
+
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        float vertical = Input.GetAxisRaw("Vertical");
+        movementDirection = new Vector3(horizontal , 0, vertical );
+        
+        MovePlayer();
+        
     }
 
-    private void FixedUpdate()
+    private void MovePlayer()
     {
-        m_Rigidbody.velocity = moveDirection.normalized * movementSpeed;
-    }
+        Vector3 moveVector = transform.TransformDirection(movementDirection.normalized * speed * Time.deltaTime);
+        rigidbody.velocity = new Vector3(moveVector.x, rigidbody.velocity.y, moveVector.z);
 
-    private void MovementInput()
-    {
-        // Horizontal and Vertical movement
-        float xAxisInput = Input.GetAxisRaw("Horizontal");
-        float zAxisInput = Input.GetAxisRaw("Vertical");
-
-        // Jump check
-        if (Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKey(KeyCode.Space) && isGrounded)
         {
-            m_Rigidbody.AddForce(xAxisInput, jumpForce, zAxisInput);
-            print("works!");
+            rigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            isGrounded = false;
         }
+    }
 
-        moveDirection = new Vector3(xAxisInput, 0.0f, zAxisInput);
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        switch(collision.gameObject.CompareTag("Ground"))
+        {
+            case true:
+                isGrounded = true;
+                break;
+            case false:
+                break;
+        }
+        
     }
 }
