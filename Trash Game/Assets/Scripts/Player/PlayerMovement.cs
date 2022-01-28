@@ -37,7 +37,11 @@ public class PlayerMovement : MonoBehaviour {
         float zAxisInput = Input.GetAxisRaw("Vertical");
 
         // Jump check
-
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            m_Rigidbody.AddForce(xAxisInput, jumpForce, zAxisInput);
+            print("works!");
+        }
 
         moveDirection = new Vector3(xAxisInput, 0.0f, zAxisInput);
     }
