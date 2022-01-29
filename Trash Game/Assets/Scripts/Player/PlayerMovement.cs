@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float jumpForce = 1.0f;
     Vector3 jump = new Vector3(0, 1, 0);
     public bool isGrounded;
-    Rigidbody rigidbody;
+    public Rigidbody rigidbody;
     public Vector3 movementDirection;
 
 
