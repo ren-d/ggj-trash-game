@@ -32,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
         switch (FindObjectOfType<GameStateManager>().currentState)
         {
             case GameStateManager.GameState.PLAYING:
+                Time.timeScale = 1;
                 MovePlayer();
                 break;
 
