@@ -9,7 +9,8 @@ public class PlayerMovement : MonoBehaviour
     Vector3 jump = new Vector3(0, 1, 0);
     public bool isGrounded;
     Rigidbody rigidbody;
-    Vector3 movementDirection;
+    public Vector3 movementDirection;
+
 
     void Start()
     {

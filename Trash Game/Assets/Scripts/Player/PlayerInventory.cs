@@ -6,47 +6,99 @@ public class PlayerInventory : MonoBehaviour
 {
     public bool inRange;
     public GameObject currentObject;
+    public bool pickedUp;
+
+    private void Start()
+    {
+        pickedUp = false;
+    }
     private void Update()
     {
 
-        if (inRange && Input.GetKey(KeyCode.E))
+        switch (FindObjectOfType<GameStateManager>().currentState)
         {
+            case GameStateManager.GameState.PLAYING:
 
-            switch (FindObjectOfType<GameStateManager>().currentSceneState)
-            {
-                case GameStateManager.GameScene.TRASHYARD:
-                    FindObjectOfType<InventoryManager>().Pickup(currentObject);
-                    Debug.Log("Item picked up Play pickup animation");
-                    break;
-                case GameStateManager.GameScene.IMAGINATION:
-                    currentObject.transform.position = transform.position + new Vector3(0, 1, 0);
-                    break;
+                if (inRange && Input.GetKey(KeyCode.E))
+                {
 
-            }
+                    switch (FindObjectOfType<GameStateManager>().currentSceneState)
+                    {
+                        case GameStateManager.GameScene.TRASHYARD:
+                            FindObjectOfType<InventoryManager>().Pickup(currentObject);
+                            Debug.Log("Item picked up Play pickup animation");
+                            break;
+                        case GameStateManager.GameScene.IMAGINATION:
+                            currentObject.transform.position = transform.position + new Vector3(0, 2, 0);
+                            pickedUp = true;
+                            break;
 
-            inRange = false;
+                    }
+
+                    inRange = false;
+
+                }
+                else if (pickedUp && Input.GetKeyDown(KeyCode.E))
+                {
+                    currentObject.transform.position = transform.position + new Vector3(2, 2, 0);
+                    pickedUp = false;
+                    currentObject.GetComponent<Rigidbody>().freezeRotation = false;
+                    inRange = false;
+                    Debug.Log("terst");
+                }
+
+                if (pickedUp)
+                {
+                    currentObject.GetComponent<Rigidbody>().freezeRotation = true;
+                    currentObject.transform.position = transform.position + new Vector3(0, 2, 0);
+                    inRange = false;
+                }
+                break;
+            case GameStateManager.GameState.DIALOG:
+                break;
+
 
         }
+
 
       
 
     }
     private void OnTriggerEnter(Collider other)
     {
-
-        if(other.CompareTag("pickup"))
+        switch(pickedUp)
         {
-            currentObject = other.gameObject;
-            inRange = true;
+            case true:
+                break;
+
+            case false:
+                if (other.CompareTag("pickup"))
+                {
+                    currentObject = other.gameObject;
+                    inRange = true;
+                }
+                break;
+
         }
+       
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("pickup"))
+
+        switch (pickedUp)
         {
-            currentObject = null;
-            inRange = false;
+            case false:
+                if (other.CompareTag("pickup"))
+                {
+                    currentObject = null;
+                    inRange = false;
+                }
+                break;
+            case true:
+                
+                break;
         }
+        
     }
 }

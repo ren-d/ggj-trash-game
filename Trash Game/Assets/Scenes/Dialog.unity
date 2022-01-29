@@ -406,7 +406,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 331453966}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.4, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 6.4928, y: 6.4928, z: 6.4928}
   m_Children: []
   m_Father: {fileID: 0}
@@ -953,6 +953,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3910823299871374653, guid: 050a9ba6238539046931118f6bef699b, type: 3}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3910823299871374653, guid: 050a9ba6238539046931118f6bef699b, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3910823299967852602, guid: 050a9ba6238539046931118f6bef699b, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -1138,6 +1146,7 @@ MonoBehaviour:
     - <3
   npcTriggerbox: {fileID: 0}
   inRange: 0
+  needItem: {fileID: 2512192578492624681, guid: 5840d1c261261724983d3da8e671e60d, type: 3}
 --- !u!1 &1927924028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1266,6 +1275,14 @@ PrefabInstance:
     - target: {fileID: 404976781227018649, guid: 5840d1c261261724983d3da8e671e60d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2176074024524228849, guid: 5840d1c261261724983d3da8e671e60d, type: 3}
+      propertyPath: m_Size.y
+      value: 1.6470695
+      objectReference: {fileID: 0}
+    - target: {fileID: 2176074024524228849, guid: 5840d1c261261724983d3da8e671e60d, type: 3}
+      propertyPath: m_Center.y
+      value: 0.6764653
       objectReference: {fileID: 0}
     - target: {fileID: 2512192578492624681, guid: 5840d1c261261724983d3da8e671e60d, type: 3}
       propertyPath: m_Name
@@ -1410,6 +1427,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5617797318492861358, guid: 701846527ead03f4cbc7bab38d7a7e13, type: 3}
+      propertyPath: m_Size.y
+      value: 1.9382659
+      objectReference: {fileID: 0}
+    - target: {fileID: 5617797318492861358, guid: 701846527ead03f4cbc7bab38d7a7e13, type: 3}
+      propertyPath: m_Center.y
+      value: 0.53086704
+      objectReference: {fileID: 0}
     - target: {fileID: 6222390370156761798, guid: 701846527ead03f4cbc7bab38d7a7e13, type: 3}
       propertyPath: m_RootOrder
       value: 10
