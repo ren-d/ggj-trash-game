@@ -9,6 +9,7 @@ public class MenuButtons : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         FindObjectOfType<GameStateManager>().currentState = GameStateManager.GameState.PLAYING;
+        Time.timeScale = 1;
     }
 
     public void QuitGame()

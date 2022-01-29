@@ -47,10 +47,4 @@ public class PauseMenuButtons : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
-
-    public void Continue()
-    {
-        FindObjectOfType<GameStateManager>().currentState = GameStateManager.GameState.PLAYING;
-        isPaused = false;
-    }
 }
