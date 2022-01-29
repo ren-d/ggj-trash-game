@@ -7,12 +7,7 @@ public class PauseMenuButtons : MonoBehaviour
 {
     GameObject pauseMenu;
     bool isPaused = false;
-    bool isMainMenu = false;
 
-    private void Awake()
-    {
-        DontDestroyOnLoad(this);
-    }
 
     private void Start()
     {
@@ -21,22 +16,15 @@ public class PauseMenuButtons : MonoBehaviour
 
     private void Update()
     {
-        if (!isMainMenu)
+        if (Input.GetButtonDown("Cancel") && !isPaused)
         {
-            if (Input.GetButtonDown("Cancel") && !isPaused)
-            {
-                Pause();
-            }
-            else if (Input.GetButtonDown("Cancel") && isPaused)
-            {
-                Unpause();
-            }
-        }  
-    }
+            Pause();
+        }
+        else if (Input.GetButtonDown("Cancel") && isPaused)
+        {
+            Unpause();
+        }
 
-    public void OnStartPlay()
-    {
-        isMainMenu = false;
     }
 
     public void Pause()
@@ -55,9 +43,6 @@ public class PauseMenuButtons : MonoBehaviour
     public void ToMenu()
     {
         SceneManager.LoadScene(0);
-        GameStateManager gameStateManager = FindObjectOfType<GameStateManager>();
-        Destroy(gameStateManager);
-        Destroy(gameObject);
     }
 
     public void Continue()
