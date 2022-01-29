@@ -44,7 +44,7 @@ public class GameStateManager : MonoBehaviour
         currentState = GameState.PLAYING;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         
         switch (currentSceneState)
