@@ -7,7 +7,7 @@ public class PauseMenuButtons : MonoBehaviour
 {
     GameObject pauseMenu;
     bool isPaused = false;
-    bool isMainMenu = true;
+    bool isMainMenu = false;
 
     private void Awake()
     {
