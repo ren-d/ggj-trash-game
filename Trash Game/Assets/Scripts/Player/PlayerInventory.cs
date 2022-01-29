@@ -43,13 +43,13 @@ public class PlayerInventory : MonoBehaviour
                     currentObject.transform.position = transform.position + new Vector3(2, 2, 0);
                     pickedUp = false;
                     currentObject.GetComponent<Rigidbody>().freezeRotation = false;
+                    currentObject.GetComponent<Rigidbody>().isKinematic = false;
                     inRange = false;
-                    Debug.Log("terst");
                 }
 
                 if (pickedUp)
                 {
-                    currentObject.GetComponent<Rigidbody>().freezeRotation = true;
+                    currentObject.GetComponent<Rigidbody>().isKinematic = true;
                     currentObject.transform.position = transform.position + new Vector3(0, 2, 0);
                     inRange = false;
                 }
