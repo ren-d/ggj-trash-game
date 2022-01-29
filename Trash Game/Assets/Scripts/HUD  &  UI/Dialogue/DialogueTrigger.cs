@@ -5,8 +5,12 @@ using UnityEngine;
 public class DialogueTrigger : MonoBehaviour
 {
     public Dialogue dialogue;
+    public Dialogue pickupDialogue;
+
     public BoxCollider npcTriggerbox;
     public bool inRange = false;
+
+    
     public void TriggerDialogue()
     {
         FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
@@ -23,6 +27,7 @@ public class DialogueTrigger : MonoBehaviour
     {
         if(other.name == "Player")
         {
+          
             Debug.Log("plyaer");
             inRange = true;
         }
