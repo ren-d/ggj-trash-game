@@ -32,12 +32,15 @@ public class PauseMenuButtons : MonoBehaviour
         FindObjectOfType<GameStateManager>().currentState = GameStateManager.GameState.PAUSED;
         pauseMenu.SetActive(true);
         isPaused = true;
+        Time.timeScale = 0;
     }
     public void Unpause()
     {
         FindObjectOfType<GameStateManager>().currentState = GameStateManager.GameState.PLAYING;
         pauseMenu.SetActive(false);
         isPaused = false;
+        Time.timeScale = 1;
+
     }
 
     public void ToMenu()
