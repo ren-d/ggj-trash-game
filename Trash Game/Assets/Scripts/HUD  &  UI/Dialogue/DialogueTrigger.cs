@@ -21,6 +21,8 @@ public class DialogueTrigger : MonoBehaviour
                 FindObjectOfType<DialogueManager>().StartDialogue(pickupDialogue);
                 FindObjectOfType<PlayerInventory>().currentObject.transform.position = transform.position + new Vector3(0, 2, 0);
                 hasItem = true;
+                FindObjectOfType<PlayerInventory>().currentObject.GetComponent<BoxCollider>().enabled = false;
+                FindObjectOfType<PlayerInventory>().currentObject.GetComponent<Rigidbody>().isKinematic = true;
                 break;
 
             case false:
