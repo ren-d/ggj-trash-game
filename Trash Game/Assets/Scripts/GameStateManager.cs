@@ -31,7 +31,15 @@ public class GameStateManager : MonoBehaviour
 
     private void Awake()
     {
-        DontDestroyOnLoad(this);
+        int amountOfManagers = FindObjectsOfType<GameStateManager>().Length;
+        if (amountOfManagers != 1)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            DontDestroyOnLoad(this);
+        }
         currentSceneState = GameScene.TRASHYARD;
         currentState = GameState.PLAYING;
     }
