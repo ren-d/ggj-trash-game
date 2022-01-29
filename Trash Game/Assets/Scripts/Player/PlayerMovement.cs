@@ -35,10 +35,15 @@ public class PlayerMovement : MonoBehaviour
                 break;
 
             case GameStateManager.GameState.DIALOG:
+                Time.timeScale = 0;
                 break;
 
             case GameStateManager.GameState.MENU:
                     
+                break;
+
+            case GameStateManager.GameState.PAUSED:
+                Time.timeScale = 0;
                 break;
         }
 
