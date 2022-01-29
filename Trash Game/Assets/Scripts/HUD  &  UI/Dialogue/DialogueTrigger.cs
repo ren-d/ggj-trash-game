@@ -7,13 +7,30 @@ public class DialogueTrigger : MonoBehaviour
     public Dialogue dialogue;
     public Dialogue pickupDialogue;
 
-    public BoxCollider npcTriggerbox;
     public bool inRange = false;
+    public GameObject needItem;
 
-    
+    bool found = false;
+    bool hasItem = false;
+
     public void TriggerDialogue()
     {
-        FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+        switch(found)
+        {
+            case true:
+                FindObjectOfType<DialogueManager>().StartDialogue(pickupDialogue);
+                FindObjectOfType<PlayerInventory>().currentObject.transform.position = transform.position + new Vector3(0, 2, 0);
+                hasItem = true;
+                FindObjectOfType<PlayerInventory>().currentObject.GetComponent<BoxCollider>().enabled = false;
+                FindObjectOfType<PlayerInventory>().currentObject.GetComponent<Rigidbody>().isKinematic = true;
+                break;
+
+            case false:
+                FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+                    
+                break;
+        }
+       
     }
 
     private void Update()
@@ -22,15 +39,31 @@ public class DialogueTrigger : MonoBehaviour
         {
             TriggerDialogue();
         }
+
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(other.name == "Player")
+        if(!hasItem)
         {
-          
-            Debug.Log("plyaer");
-            inRange = true;
+            if (other.name == "Player")
+            {
+                switch (FindObjectOfType<PlayerInventory>().pickedUp)
+                {
+                    case true:
+                        if (needItem.name == FindObjectOfType<PlayerInventory>().currentObject.name)
+                        {
+                            found = true;
+                        }
+                        break;
+                    case false:
+
+                        break;
+                }
+                inRange = true;
+
+            }
         }
+        
     }
 
     private void OnTriggerExit(Collider other)

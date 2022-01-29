@@ -32,7 +32,8 @@ public class PlayerInventory : MonoBehaviour
                             currentObject.transform.position = transform.position + new Vector3(0, 2, 0);
                             pickedUp = true;
                             break;
-                            
+
+
                     }
 
                     inRange = false;
@@ -46,6 +47,7 @@ public class PlayerInventory : MonoBehaviour
                     currentObject.GetComponent<Rigidbody>().isKinematic = false;
                     inRange = false;
                 }
+
 
                 if (pickedUp)
                 {
