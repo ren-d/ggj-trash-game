@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public bool isGrounded;
     Rigidbody rigidbody;
     Vector3 movementDirection;
+
     void Start()
     {
         isGrounded = false;
@@ -24,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
 
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
-        movementDirection = new Vector3(horizontal , 0, vertical );
+        movementDirection = new Vector3(horizontal , 0, vertical);
         
         MovePlayer();
         
