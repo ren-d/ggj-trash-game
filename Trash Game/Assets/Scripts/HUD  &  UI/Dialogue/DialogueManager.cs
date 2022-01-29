@@ -19,7 +19,7 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue(Dialogue dialogue)
     {
         animator.SetBool("isOpen", true);
-
+        FindObjectOfType<GameStateManager>().setGameState(GameStateManager.GameState.DIALOG);
         nameText.text = dialogue.name;
 
         sentences.Clear();
@@ -47,6 +47,7 @@ public class DialogueManager : MonoBehaviour
     public void EndDialogue()
     {
         animator.SetBool("isOpen", false);
+        FindObjectOfType<GameStateManager>().setGameState(GameStateManager.GameState.PLAYING);
         Debug.Log("end of convo");
     }
 }

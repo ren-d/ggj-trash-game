@@ -25,9 +25,24 @@ public class PlayerMovement : MonoBehaviour
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         movementDirection = new Vector3(horizontal , 0, vertical );
-        
-        MovePlayer();
-        
+
+        switch (FindObjectOfType<GameStateManager>().currentState)
+        {
+            case GameStateManager.GameState.PLAYING:
+                MovePlayer();
+                break;
+
+            case GameStateManager.GameState.DIALOG:
+                break;
+
+            case GameStateManager.GameState.MENU:
+                    
+                break;
+        }
+
+
+
+
     }
 
     private void MovePlayer()
