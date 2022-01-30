@@ -12,14 +12,36 @@ public struct inventoryItem
     public Vector3 scrapyardPos;
 
     public bool spawned, iSaved, sSaved;
-    public int x, y, z;
+    public int x;
 }
 
 public class InventoryManager : MonoBehaviour
 {
     public inventoryItem[] inventory;
 
- 
+    public void saveValues()
+    {
+        for (int i = 0; i < inventory.Length; i++)
+        {
+            
+            switch (FindObjectOfType<GameStateManager>().currentSceneState)
+            {
+                case GameStateManager.GameScene.IMAGINATION:
+                    Debug.Log("PLEASE");
+                    if (inventory[i].isCollected && inventory[i].spawned)
+                    {
+                        inventory[i].imaginationPos = inventory[i].item1.transform.position;
+
+                        inventory[i].iSaved = true;
+                    }
+                    break;
+                case GameStateManager.GameScene.TRASHYARD:
+
+                    break;
+            }
+        }
+    }
+
     public void Pickup(GameObject item)
     {
         for(int i = 0; i < inventory.Length; i++)
@@ -36,9 +58,15 @@ public class InventoryManager : MonoBehaviour
 
     private void Update()
     {
+
+        if(Input.GetKeyDown(KeyCode.F))
+        {
+            saveValues();
+        }
+
         for (int i = 0; i < inventory.Length; i++)
         {
-            inventory[i].imaginationPos = inventory[i].item.transform.position;
+            
             switch (FindObjectOfType<GameStateManager>().currentSceneState)
             {
                 case GameStateManager.GameScene.IMAGINATION:
@@ -46,23 +74,14 @@ public class InventoryManager : MonoBehaviour
                     {
                         if(!inventory[i].spawned && !inventory[i].iSaved)
                         {
-                            inventory[i].imaginationPos = new Vector3(0, 0, 0);
+                            
                             inventory[i].item1 = Instantiate<GameObject>(inventory[i].item, GameObject.Find("SpawnPoint").transform);
                             inventory[i].spawned = true;
-                        }
-                        else if(!inventory[i].spawned && inventory[i].iSaved)
+                        }else if(!inventory[i].spawned && inventory[i].iSaved)
                         {
                             inventory[i].item1 = Instantiate<GameObject>(inventory[i].item, GameObject.Find("SpawnPoint").transform);
                             inventory[i].item1.transform.position = inventory[i].imaginationPos;
-                            
-                  
                             inventory[i].spawned = true;
-                        }
-
-                        if(inventory[i].spawned)
-                        {
-                            inventory[i].imaginationPos = inventory[i].item1.transform.position;
-                            inventory[i].iSaved = true;
                         }
                        
 
@@ -70,7 +89,7 @@ public class InventoryManager : MonoBehaviour
                     }
                     break;
                 case GameStateManager.GameScene.TRASHYARD:
-
+                    inventory[i].spawned = false;
                     break;
             }
 

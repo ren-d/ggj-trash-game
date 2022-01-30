@@ -64,6 +64,7 @@ public class PlayerMovement : MonoBehaviour
                 if(Input.GetKey(KeyCode.F))
                 {
                     FindObjectOfType<GameStateManager>().playerScrapPos = transform.position;
+                    
                     FindObjectOfType<GameStateManager>().currentSceneState = GameStateManager.GameScene.IMAGINATION;
                     Debug.Log("NO");
                     SceneManager.LoadScene(3);
@@ -75,6 +76,7 @@ public class PlayerMovement : MonoBehaviour
                 if (Input.GetKey(KeyCode.F))
                 {
                     Debug.Log("YES");
+                    FindObjectOfType<InventoryManager>().saveValues();
                     transform.position = FindObjectOfType<GameStateManager>().playerScrapPos;
                     FindObjectOfType<GameStateManager>().currentSceneState = GameStateManager.GameScene.TRASHYARD;
                     SceneManager.LoadScene(2);
