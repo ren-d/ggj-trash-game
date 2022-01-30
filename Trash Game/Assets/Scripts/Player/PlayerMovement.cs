@@ -8,12 +8,14 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float jumpForce = 1.0f;
     Vector3 jump = new Vector3(0, 1, 0);
     public bool isGrounded;
+    GroundCheck groundCheck;
     public Rigidbody rigidbody;
     public Vector3 movementDirection;
 
 
     void Start()
     {
+        groundCheck = transform.GetChild(0).gameObject.GetComponent<GroundCheck>();
         switch(FindObjectOfType<GameStateManager>().currentSceneState)
         {
             case GameStateManager.GameScene.TRASHYARD:
@@ -83,8 +85,8 @@ public class PlayerMovement : MonoBehaviour
                 }
                 break;
         }
-        
 
+        GroundCheck();
     }
 
     private void MovePlayer()
@@ -101,16 +103,8 @@ public class PlayerMovement : MonoBehaviour
 
 
 
-    private void OnCollisionEnter(Collision collision)
+    private void GroundCheck()
     {
-        switch(collision.gameObject.CompareTag("Ground"))
-        {
-            case true:
-                isGrounded = true;
-                break;
-            case false:
-                break;
-        }
-        
+        isGrounded = groundCheck.isGrounded;
     }
 }
