@@ -32,7 +32,7 @@ public class GameStateManager : MonoBehaviour
     private void Awake()
     {
 
-        playerScrapPos = new Vector3(0, 2, 0);
+        playerScrapPos = new Vector3(0, 10, 0);
 
         int amountOfManagers = FindObjectsOfType<GameStateManager>().Length;
         if (amountOfManagers != 1)
