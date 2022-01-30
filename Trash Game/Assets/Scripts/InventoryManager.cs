@@ -89,6 +89,7 @@ public class InventoryManager : MonoBehaviour
                     }
                     break;
                 case GameStateManager.GameScene.TRASHYARD:
+
                     inventory[i].spawned = false;
                     break;
             }
