@@ -93,7 +93,7 @@ public class PlayerMovement : MonoBehaviour
     private void MovePlayer()
     {
         Vector3 moveVector = transform.TransformDirection(movementDirection.normalized * speed * Time.deltaTime);
-        rigidbody.velocity = new Vector3(moveVector.x, rigidbody.velocity.y, moveVector.z);
+        rigidbody.velocity = new Vector3(-moveVector.z, rigidbody.velocity.y, moveVector.x);
 
         if(Input.GetKey(KeyCode.Space) && isGrounded)
         {
