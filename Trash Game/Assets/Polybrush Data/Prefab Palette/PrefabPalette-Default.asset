@@ -1,0 +1,351 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc38003c0e0db6641a4762d4f392de52, type: 3}
+  m_Name: PrefabPalette-Default
+  m_EditorClassIdentifier: 
+  prefabs:
+  - gameObject: {fileID: 919132149155446097, guid: 617ac678f8fa97c45bbc97ad45722944, type: 3}
+    settings:
+      m_Strength: 50
+      m_RotationRangeMin: {x: 0, y: 0, z: 0}
+      m_RotationRangeMax: {x: 0, y: 0, z: 0}
+      m_ScaleRangeMin: {x: 0.4, y: 0.4, z: 1}
+      m_ScaleRangeMax: {x: 1, y: 1, z: 1}
+      m_UniformScale: {x: 0.3, y: 0.3}
+      m_UniformBool: 1
+      m_XRotationBool: 0
+      m_YRotationBool: 0
+      m_ZRotationBool: 0
+      m_XScaleBool: 0
+      m_YScaleBool: 0
+      m_ZScaleBool: 0
+    name: Tin1
+  - gameObject: {fileID: 919132149155446097, guid: df56bf3f816a1c54f9d9335646c3eb7f, type: 3}
+    settings:
+      m_Strength: 50
+      m_RotationRangeMin: {x: 0, y: 0, z: 0}
+      m_RotationRangeMax: {x: 0, y: 0, z: 0}
+      m_ScaleRangeMin: {x: 1, y: 1, z: 1}
+      m_ScaleRangeMax: {x: 1, y: 1, z: 1}
+      m_UniformScale: {x: 0.3, y: 0.3}
+      m_UniformBool: 1
+      m_XRotationBool: 1
+      m_YRotationBool: 0
+      m_ZRotationBool: 0
+      m_XScaleBool: 0
+      m_YScaleBool: 0
+      m_ZScaleBool: 0
+    name: Tin3
+  - gameObject: {fileID: 919132149155446097, guid: aa989c132310c694c888819b95791ac0, type: 3}
+    settings:
+      m_Strength: 50
+      m_RotationRangeMin: {x: 0, y: 0, z: 0}
+      m_RotationRangeMax: {x: 0, y: 0, z: 0}
+      m_ScaleRangeMin: {x: 1, y: 1, z: 1}
+      m_ScaleRangeMax: {x: 1, y: 1, z: 1}
+      m_UniformScale: {x: 0.3, y: 0.3}
+      m_UniformBool: 1
+      m_XRotationBool: 1
+      m_YRotationBool: 0
+      m_ZRotationBool: 0
+      m_XScaleBool: 0
+      m_YScaleBool: 0
+      m_ZScaleBool: 0
+    name: Tin2
+  - gameObject: {fileID: 919132149155446097, guid: 405e5ef696bb0ee459d36f2b95321a5c, type: 3}
+    settings:
+      m_Strength: 50
+      m_RotationRangeMin: {x: 0, y: 0, z: 0}
+      m_RotationRangeMax: {x: 0, y: 0, z: 0}
+      m_ScaleRangeMin: {x: 1, y: 1, z: 1}
+      m_ScaleRangeMax: {x: 1, y: 1, z: 1}
+      m_UniformScale: {x: 1, y: 1}
+      m_UniformBool: 1
+      m_XRotationBool: 1
+      m_YRotationBool: 0
+      m_ZRotationBool: 0
+      m_XScaleBool: 0
+      m_YScaleBool: 0
+      m_ZScaleBool: 0
+    name: bottle1
+  - gameObject: {fileID: 919132149155446097, guid: 7fdcc3f62c5cf8c479c862c90f90227e, type: 3}
+    settings:
+      m_Strength: 50
+      m_RotationRangeMin: {x: 0, y: 0, z: 0}
+      m_RotationRangeMax: {x: 0, y: 0, z: 0}
+      m_ScaleRangeMin: {x: 1, y: 1, z: 1}
+      m_ScaleRangeMax: {x: 1, y: 1, z: 1}
+      m_UniformScale: {x: 3, y: 3}
+      m_UniformBool: 1
+      m_XRotationBool: 1
+      m_YRotationBool: 0
+      m_ZRotationBool: 0
+      m_XScaleBool: 0
+      m_YScaleBool: 0
+      m_ZScaleBool: 0
+    name: bottle1broken1
+  - gameObject: {fileID: 919132149155446097, guid: e88508d199c11be49a295f4ea3123fd1, type: 3}
+    settings:
+      m_Strength: 50
+      m_RotationRangeMin: {x: 0, y: 0, z: 2.5352097}
+      m_RotationRangeMax: {x: 0, y: 250.98592, z: 230.70422}
+      m_ScaleRangeMin: {x: 1, y: 1, z: 1}
+      m_ScaleRangeMax: {x: 1, y: 1, z: 1}
+      m_UniformScale: {x: 3, y: 3}
+      m_UniformBool: 1
+      m_XRotationBool: 0
+      m_YRotationBool: 1
+      m_ZRotationBool: 1
+      m_XScaleBool: 0
+      m_YScaleBool: 0
+      m_ZScaleBool: 0
+    name: bottle1broken2
+  - gameObject: {fileID: 919132149155446097, guid: e726b20373d36224d838e782ef9960f1, type: 3}
+    settings:
+      m_Strength: 50
+      m_RotationRangeMin: {x: 0, y: 0, z: 0}
+      m_RotationRangeMax: {x: 0, y: 141.97183, z: 192.67606}
+      m_ScaleRangeMin: {x: 1, y: 1, z: 1}
+      m_ScaleRangeMax: {x: 1, y: 1, z: 1}
+      m_UniformScale: {x: 3, y: 3}
+      m_UniformBool: 1
+      m_XRotationBool: 0
+      m_YRotationBool: 1
+      m_ZRotationBool: 1
+      m_XScaleBool: 0
+      m_YScaleBool: 0
+      m_ZScaleBool: 0
+    name: bottle2broken1
+  - gameObject: {fileID: 919132149155446097, guid: 7fc0f423e2dd54f4e92335cc276e78d3, type: 3}
+    settings:
+      m_Strength: 50
+      m_RotationRangeMin: {x: 0, y: 0, z: 0}
+      m_RotationRangeMax: {x: 0, y: 0, z: 0}
+      m_ScaleRangeMin: {x: 1, y: 1, z: 1}
+      m_ScaleRangeMax: {x: 1, y: 1, z: 1}
+      m_UniformScale: {x: 3, y: 3}
+      m_UniformBool: 1
+      m_XRotationBool: 1
+      m_YRotationBool: 0
+      m_ZRotationBool: 0
+      m_XScaleBool: 0
+      m_YScaleBool: 0
+      m_ZScaleBool: 0
+    name: bottle2broken2
+  - gameObject: {fileID: 919132149155446097, guid: 0cd72a7800564d64898455dd746757f3, type: 3}
+    settings:
+      m_Strength: 50
+      m_RotationRangeMin: {x: 0, y: 0, z: 0}
+      m_RotationRangeMax: {x: 0, y: 0, z: 0}
+      m_ScaleRangeMin: {x: 1, y: 1, z: 1}
+      m_ScaleRangeMax: {x: 1, y: 1, z: 1}
+      m_UniformScale: {x: 3, y: 3}
+      m_UniformBool: 1
+      m_XRotationBool: 1
+      m_YRotationBool: 0
+      m_ZRotationBool: 0
+      m_XScaleBool: 0
+      m_YScaleBool: 0
+      m_ZScaleBool: 0
+    name: bottle3broken2
+  - gameObject: {fileID: 919132149155446097, guid: 7ee7312534be8b048a2330f9c02e4778, type: 3}
+    settings:
+      m_Strength: 50
+      m_RotationRangeMin: {x: 19.014084, y: 0, z: 0}
+      m_RotationRangeMax: {x: 90, y: 0, z: 0}
+      m_ScaleRangeMin: {x: 1, y: 1, z: 1}
+      m_ScaleRangeMax: {x: 1, y: 1, z: 1}
+      m_UniformScale: {x: 3.5, y: 3.5}
+      m_UniformBool: 1
+      m_XRotationBool: 1
+      m_YRotationBool: 0
+      m_ZRotationBool: 0
+      m_XScaleBool: 0
+      m_YScaleBool: 0
+      m_ZScaleBool: 0
+    name: oilbarrel
+  - gameObject: {fileID: 919132149155446097, guid: a307d88ba3f384543bbee033e3ada73c, type: 3}
+    settings:
+      m_Strength: 50
+      m_RotationRangeMin: {x: 0, y: 0, z: 0}
+      m_RotationRangeMax: {x: 83.66197, y: 327.04227, z: 354.9296}
+      m_ScaleRangeMin: {x: 1, y: 1, z: 1}
+      m_ScaleRangeMax: {x: 1, y: 1, z: 1}
+      m_UniformScale: {x: 3.5, y: 3.5}
+      m_UniformBool: 1
+      m_XRotationBool: 1
+      m_YRotationBool: 1
+      m_ZRotationBool: 1
+      m_XScaleBool: 0
+      m_YScaleBool: 0
+      m_ZScaleBool: 0
+    name: oilbarrelcrushed
+  - gameObject: {fileID: 919132149155446097, guid: f92e0a1c50e21d54b8e563fe5de26b30, type: 3}
+    settings:
+      m_Strength: 50
+      m_RotationRangeMin: {x: 0, y: 0, z: 0}
+      m_RotationRangeMax: {x: 86.19718, y: 301.69016, z: 309.29578}
+      m_ScaleRangeMin: {x: 1, y: 1, z: 1}
+      m_ScaleRangeMax: {x: 1, y: 1, z: 1}
+      m_UniformScale: {x: 3.5, y: 3.5}
+      m_UniformBool: 1
+      m_XRotationBool: 1
+      m_YRotationBool: 1
+      m_ZRotationBool: 1
+      m_XScaleBool: 0
+      m_YScaleBool: 0
+      m_ZScaleBool: 0
+    name: oilbarreldented
+  - gameObject: {fileID: 919132149155446097, guid: e384c87a156dbf44cb596bac5dafa86a, type: 3}
+    settings:
+      m_Strength: 50
+      m_RotationRangeMin: {x: 0, y: 22.816902, z: 0}
+      m_RotationRangeMax: {x: 177.4648, y: 316.9014, z: 344.78876}
+      m_ScaleRangeMin: {x: 1, y: 1, z: 1}
+      m_ScaleRangeMax: {x: 1, y: 1, z: 1}
+      m_UniformScale: {x: 1, y: 2}
+      m_UniformBool: 1
+      m_XRotationBool: 1
+      m_YRotationBool: 1
+      m_ZRotationBool: 1
+      m_XScaleBool: 0
+      m_YScaleBool: 0
+      m_ZScaleBool: 0
+    name: WavyMetal4
+  - gameObject: {fileID: 919132149155446097, guid: 77fac966d0d4e7c48b53d50c0e805861, type: 3}
+    settings:
+      m_Strength: 50
+      m_RotationRangeMin: {x: 15.211267, y: 0, z: 0}
+      m_RotationRangeMax: {x: 32.95775, y: 253.52115, z: 281.40845}
+      m_ScaleRangeMin: {x: 1, y: 1, z: 1}
+      m_ScaleRangeMax: {x: 1, y: 1, z: 1}
+      m_UniformScale: {x: 1, y: 2}
+      m_UniformBool: 1
+      m_XRotationBool: 1
+      m_YRotationBool: 1
+      m_ZRotationBool: 1
+      m_XScaleBool: 0
+      m_YScaleBool: 0
+      m_ZScaleBool: 0
+    name: WavyMetal3
+  - gameObject: {fileID: 919132149155446097, guid: a6c999f03d011ab46a85f522f9faec8f, type: 3}
+    settings:
+      m_Strength: 50
+      m_RotationRangeMin: {x: 0, y: 0, z: 0}
+      m_RotationRangeMax: {x: 91.26761, y: 306.76056, z: 321.97183}
+      m_ScaleRangeMin: {x: 1, y: 1, z: 1}
+      m_ScaleRangeMax: {x: 1, y: 1, z: 1}
+      m_UniformScale: {x: 1, y: 2}
+      m_UniformBool: 1
+      m_XRotationBool: 1
+      m_YRotationBool: 1
+      m_ZRotationBool: 1
+      m_XScaleBool: 0
+      m_YScaleBool: 0
+      m_ZScaleBool: 0
+    name: WavyMetal2
+  - gameObject: {fileID: 919132149155446097, guid: b430ead9da195794f96056e046534c3d, type: 3}
+    settings:
+      m_Strength: 50
+      m_RotationRangeMin: {x: 0, y: 0, z: 0}
+      m_RotationRangeMax: {x: 73.52113, y: 319.43665, z: 360}
+      m_ScaleRangeMin: {x: 1, y: 1, z: 1}
+      m_ScaleRangeMax: {x: 1, y: 1, z: 1}
+      m_UniformScale: {x: 1, y: 2}
+      m_UniformBool: 1
+      m_XRotationBool: 1
+      m_YRotationBool: 1
+      m_ZRotationBool: 1
+      m_XScaleBool: 0
+      m_YScaleBool: 0
+      m_ZScaleBool: 0
+    name: WavyMetal1
+  - gameObject: {fileID: 919132149155446097, guid: 0f73babc40d4e1b4e9baf2151c988f1b, type: 3}
+    settings:
+      m_Strength: 50
+      m_RotationRangeMin: {x: 0, y: 0, z: 0}
+      m_RotationRangeMax: {x: 70.985916, y: 240.84508, z: 291.54932}
+      m_ScaleRangeMin: {x: 1, y: 1, z: 1}
+      m_ScaleRangeMax: {x: 1, y: 1, z: 1}
+      m_UniformScale: {x: 1, y: 1}
+      m_UniformBool: 1
+      m_XRotationBool: 1
+      m_YRotationBool: 1
+      m_ZRotationBool: 1
+      m_XScaleBool: 0
+      m_YScaleBool: 0
+      m_ZScaleBool: 0
+    name: Plank1
+  - gameObject: {fileID: 919132149155446097, guid: 0ecbf19154feee347b8bb39978dd3823, type: 3}
+    settings:
+      m_Strength: 50
+      m_RotationRangeMin: {x: 0, y: 0, z: 0}
+      m_RotationRangeMax: {x: 78.59155, y: 197.74649, z: 245.9155}
+      m_ScaleRangeMin: {x: 1, y: 1, z: 1}
+      m_ScaleRangeMax: {x: 1, y: 1, z: 1}
+      m_UniformScale: {x: 1, y: 1}
+      m_UniformBool: 1
+      m_XRotationBool: 1
+      m_YRotationBool: 1
+      m_ZRotationBool: 1
+      m_XScaleBool: 0
+      m_YScaleBool: 0
+      m_ZScaleBool: 0
+    name: Plank2
+  - gameObject: {fileID: 919132149155446097, guid: 0ecbf19154feee347b8bb39978dd3823, type: 3}
+    settings:
+      m_Strength: 50
+      m_RotationRangeMin: {x: 0, y: 0, z: 0}
+      m_RotationRangeMax: {x: 68.45071, y: 172.39436, z: 220.56339}
+      m_ScaleRangeMin: {x: 1, y: 1, z: 1}
+      m_ScaleRangeMax: {x: 1, y: 1, z: 1}
+      m_UniformScale: {x: 1, y: 1}
+      m_UniformBool: 1
+      m_XRotationBool: 1
+      m_YRotationBool: 1
+      m_ZRotationBool: 1
+      m_XScaleBool: 0
+      m_YScaleBool: 0
+      m_ZScaleBool: 0
+    name: Plank2
+  - gameObject: {fileID: 919132149155446097, guid: c0172fd013960ef47953bea4c3a39c04, type: 3}
+    settings:
+      m_Strength: 50
+      m_RotationRangeMin: {x: 0, y: 0, z: 0}
+      m_RotationRangeMax: {x: 114.08451, y: 200.2817, z: 276.33804}
+      m_ScaleRangeMin: {x: 1, y: 1, z: 1}
+      m_ScaleRangeMax: {x: 1, y: 1, z: 1}
+      m_UniformScale: {x: 1, y: 1}
+      m_UniformBool: 1
+      m_XRotationBool: 1
+      m_YRotationBool: 1
+      m_ZRotationBool: 1
+      m_XScaleBool: 0
+      m_YScaleBool: 0
+      m_ZScaleBool: 0
+    name: Plank4
+  - gameObject: {fileID: 919132149155446097, guid: 323f29a3e111487438e96984756e7bfe, type: 3}
+    settings:
+      m_Strength: 50
+      m_RotationRangeMin: {x: 0, y: 58.30986, z: 0}
+      m_RotationRangeMax: {x: 0, y: 266.1972, z: 0}
+      m_ScaleRangeMin: {x: 1, y: 1, z: 1}
+      m_ScaleRangeMax: {x: 1, y: 1, z: 1}
+      m_UniformScale: {x: 2.5, y: 2.5}
+      m_UniformBool: 1
+      m_XRotationBool: 1
+      m_YRotationBool: 1
+      m_ZRotationBool: 1
+      m_XScaleBool: 0
+      m_YScaleBool: 0
+      m_ZScaleBool: 0
+    name: car
