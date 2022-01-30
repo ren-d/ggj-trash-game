@@ -11,10 +11,11 @@ public class PlayerMovement : MonoBehaviour
     GroundCheck groundCheck;
     public Rigidbody rigidbody;
     public Vector3 movementDirection;
-
+    private Animator anim;
 
     void Start()
     {
+        anim = transform.GetChild(1).gameObject.GetComponent<Animator>();
         groundCheck = transform.GetChild(0).gameObject.GetComponent<GroundCheck>();
         switch(FindObjectOfType<GameStateManager>().currentSceneState)
         {
@@ -96,8 +97,11 @@ public class PlayerMovement : MonoBehaviour
 
         if(Input.GetKey(KeyCode.Space) && isGrounded)
         {
+            anim.SetBool("jumping", true);
+            transform.GetChild(0).gameObject.GetComponent<GroundCheck>();
             rigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             isGrounded = false;
+            
         }
     }
 
@@ -106,5 +110,9 @@ public class PlayerMovement : MonoBehaviour
     private void GroundCheck()
     {
         isGrounded = groundCheck.isGrounded;
+        if(isGrounded ==  true)
+        {
+            anim.SetBool("jumping", true);
+        }
     }
 }
