@@ -70,7 +70,7 @@ public class PlayerMovement : MonoBehaviour
                     
                     FindObjectOfType<GameStateManager>().currentSceneState = GameStateManager.GameScene.IMAGINATION;
                     Debug.Log("NO");
-                    SceneManager.LoadScene(3);
+                    SceneManager.LoadScene(2);
                     
                 }
                 break;
@@ -82,7 +82,7 @@ public class PlayerMovement : MonoBehaviour
                     FindObjectOfType<InventoryManager>().saveValues();
                     transform.position = FindObjectOfType<GameStateManager>().playerScrapPos;
                     FindObjectOfType<GameStateManager>().currentSceneState = GameStateManager.GameScene.TRASHYARD;
-                    SceneManager.LoadScene(2);
+                    SceneManager.LoadScene(1);
                 }
                 break;
         }
