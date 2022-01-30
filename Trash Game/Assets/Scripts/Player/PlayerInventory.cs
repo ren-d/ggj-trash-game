@@ -19,7 +19,7 @@ public class PlayerInventory : MonoBehaviour
         {
             case GameStateManager.GameState.PLAYING:
 
-                if (inRange && Input.GetKey(KeyCode.E))
+                if (inRange && Input.GetKeyDown(KeyCode.E) && !pickedUp)
                 {
 
                     switch (FindObjectOfType<GameStateManager>().currentSceneState)
@@ -40,9 +40,10 @@ public class PlayerInventory : MonoBehaviour
                 }
                 else if (pickedUp && Input.GetKeyDown(KeyCode.E))
                 {
-                    currentObject.transform.position = transform.position + new Vector3(2, 2, 0);
+                    currentObject.transform.position = transform.position + this.GetComponent<Rigidbody>().velocity.normalized * 5;
                     pickedUp = false;
                     currentObject.GetComponent<Rigidbody>().freezeRotation = false;
+
                     currentObject.GetComponent<Rigidbody>().isKinematic = false;
                     inRange = false;
                 }
@@ -50,6 +51,7 @@ public class PlayerInventory : MonoBehaviour
                 if (pickedUp)
                 {
                     currentObject.GetComponent<Rigidbody>().isKinematic = true;
+                    currentObject.GetComponent<Rigidbody>().freezeRotation = true;
                     currentObject.transform.position = transform.position + new Vector3(0, 2, 0);
                     inRange = false;
                 }
@@ -61,12 +63,12 @@ public class PlayerInventory : MonoBehaviour
         }
 
 
-      
+
 
     }
     private void OnTriggerEnter(Collider other)
     {
-        switch(pickedUp)
+        switch (pickedUp)
         {
             case true:
                 break;
@@ -80,7 +82,7 @@ public class PlayerInventory : MonoBehaviour
                 break;
 
         }
-       
+
     }
 
     private void OnTriggerExit(Collider other)
@@ -96,9 +98,9 @@ public class PlayerInventory : MonoBehaviour
                 }
                 break;
             case true:
-                
+
                 break;
         }
-        
+
     }
 }

@@ -23,7 +23,7 @@ public class GameStateManager : MonoBehaviour
     public GameScene currentSceneState;
     public GameState currentState;
     Scene currentScene;
-
+    public Vector3 playerScrapPos;
     public void setGameState(GameState newState)
     {
         currentState = newState;
@@ -31,6 +31,9 @@ public class GameStateManager : MonoBehaviour
 
     private void Awake()
     {
+
+        playerScrapPos = new Vector3(0, 2, 0);
+
         int amountOfManagers = FindObjectsOfType<GameStateManager>().Length;
         if (amountOfManagers != 1)
         {
@@ -43,7 +46,7 @@ public class GameStateManager : MonoBehaviour
         currentSceneState = GameScene.TRASHYARD;
         currentState = GameState.PLAYING;
     }
-
+    
     private void FixedUpdate()
     {
         
@@ -72,6 +75,7 @@ public class GameStateManager : MonoBehaviour
                     case GameState.DIALOG:
                         break;
                     case GameState.PLAYING:
+                        Time.timeScale = 1;
                         break;
                     case GameState.PAUSED:
                         break;
@@ -86,6 +90,7 @@ public class GameStateManager : MonoBehaviour
                     case GameState.DIALOG:
                         break;
                     case GameState.PLAYING:
+                        Time.timeScale = 1;
                         break;
                     case GameState.PAUSED:
                         break;

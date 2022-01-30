@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField]float speed = 1.0f;
@@ -14,6 +14,15 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
+        switch(FindObjectOfType<GameStateManager>().currentSceneState)
+        {
+            case GameStateManager.GameScene.TRASHYARD:
+                transform.position = FindObjectOfType<GameStateManager>().playerScrapPos;
+                break;
+            case GameStateManager.GameScene.IMAGINATION:
+                transform.position = new Vector3(0, 100, 0);
+                break;
+        }
         isGrounded = false;
         rigidbody = this.GetComponent<Rigidbody>();
         Physics.gravity = new Vector3(0f, -30f, 0f);
@@ -36,13 +45,45 @@ public class PlayerMovement : MonoBehaviour
                 break;
 
             case GameStateManager.GameState.DIALOG:
+ 
                 break;
 
             case GameStateManager.GameState.MENU:
-                    
+
+                break;
+
+            case GameStateManager.GameState.PAUSED:
+
                 break;
         }
 
+
+        switch (FindObjectOfType<GameStateManager>().currentSceneState)
+        {
+            case GameStateManager.GameScene.TRASHYARD:
+                if(Input.GetKey(KeyCode.F))
+                {
+                    FindObjectOfType<GameStateManager>().playerScrapPos = transform.position;
+                    
+                    FindObjectOfType<GameStateManager>().currentSceneState = GameStateManager.GameScene.IMAGINATION;
+                    Debug.Log("NO");
+                    SceneManager.LoadScene(3);
+                    
+                }
+                break;
+
+            case GameStateManager.GameScene.IMAGINATION:
+                if (Input.GetKey(KeyCode.F))
+                {
+                    Debug.Log("YES");
+                    FindObjectOfType<InventoryManager>().saveValues();
+                    transform.position = FindObjectOfType<GameStateManager>().playerScrapPos;
+                    FindObjectOfType<GameStateManager>().currentSceneState = GameStateManager.GameScene.TRASHYARD;
+                    SceneManager.LoadScene(2);
+                }
+                break;
+        }
+        
 
     }
 
@@ -57,6 +98,7 @@ public class PlayerMovement : MonoBehaviour
             isGrounded = false;
         }
     }
+
 
 
     private void OnCollisionEnter(Collision collision)

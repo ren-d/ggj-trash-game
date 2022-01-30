@@ -1191,7 +1191,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 3987014990276187462}
         m_TargetAssemblyTypeName: PauseMenuButtons, Assembly-CSharp
-        m_MethodName: Continue
+        m_MethodName: Unpause
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
