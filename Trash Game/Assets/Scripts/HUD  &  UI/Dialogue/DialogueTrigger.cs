@@ -2,47 +2,40 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class DialogueTrigger : MonoBehaviour
 {
     public Dialogue dialogue;
-    public Dialogue[] pickupDialogue;
+    public Dialogue pickupDialogue;
 
     public bool inRange = false;
-
-
-
-    public GameObject[] needItem;
+    public GameObject needItem;
 
     bool found = false;
-    int hasItem = 0;
-
-
-
+    bool hasItem = false;
 
     public void TriggerDialogue()
     {
-        if(hasItem == 0)
+        switch (found)
         {
-            FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+            case true:
+                FindObjectOfType<DialogueManager>().StartDialogue(pickupDialogue);
+                FindObjectOfType<PlayerInventory>().currentObject.transform.position = transform.position + new Vector3(0, 2, 0);
+                hasItem = true;
+                FindObjectOfType<PlayerInventory>().currentObject.GetComponent<BoxCollider>().enabled = false;
+                FindObjectOfType<PlayerInventory>().currentObject.GetComponent<Rigidbody>().isKinematic = true;
+                break;
+
+            case false:
+                FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+
+                break;
         }
 
-        if(hasItem > 0)
-        {
-            FindObjectOfType<DialogueManager>().StartDialogue(pickupDialogue[hasItem - 1]);
-            FindObjectOfType<PlayerInventory>().currentObject.transform.position = transform.position + new Vector3(0, 2, 0);
-            FindObjectOfType<PlayerInventory>().currentObject.GetComponent<BoxCollider>().enabled = false;
-            FindObjectOfType<PlayerInventory>().currentObject.GetComponent<Rigidbody>().isKinematic = true;
-            hasItem++;
-        }
-            
-        
-       
     }
 
     private void Update()
     {
-        if(Input.GetKey(KeyCode.E) && inRange)
+        if (Input.GetKey(KeyCode.E) && inRange)
         {
             TriggerDialogue();
         }
@@ -50,32 +43,27 @@ public class DialogueTrigger : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
+        if (!hasItem)
+        {
+            if (other.name == "Player")
+            {
+                switch (FindObjectOfType<PlayerInventory>().pickedUp)
+                {
+                    case true:
+                        if (needItem.name == FindObjectOfType<PlayerInventory>().currentObject.name)
+                        {
+                            found = true;
+                        }
+                        break;
+                    case false:
 
-           if (hasItem < needItem.Length)
-           {
-               if (other.gameObject.tag == "Player")
-               {
-                   switch (FindObjectOfType<PlayerInventory>().pickedUp)
-                   {
-                       case true:
+                        break;
+                }
+                inRange = true;
 
-                               if (needItem[hasItem].name == FindObjectOfType<PlayerInventory>().currentObject.name)
-                               {
-                                    hasItem++;
-                               }
-                           break;
-                       case false:
+            }
+        }
 
-                           break;
-                   }
-                   inRange = true;
-
-               }
-           }
-
-  
-       
-        
     }
 
     private void OnTriggerExit(Collider other)
