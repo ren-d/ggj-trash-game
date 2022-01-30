@@ -110,9 +110,6 @@ public class PlayerMovement : MonoBehaviour
     private void GroundCheck()
     {
         isGrounded = groundCheck.isGrounded;
-        if(isGrounded == false)
-        {
-            anim.SetBool("jumping", true);
-        }
+
     }
 }
