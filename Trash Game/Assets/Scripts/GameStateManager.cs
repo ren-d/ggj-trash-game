@@ -31,6 +31,7 @@ public class GameStateManager : MonoBehaviour
 
     private void Awake()
     {
+
         playerScrapPos = new Vector3(0, 2, 0);
 
         int amountOfManagers = FindObjectsOfType<GameStateManager>().Length;
@@ -74,6 +75,7 @@ public class GameStateManager : MonoBehaviour
                     case GameState.DIALOG:
                         break;
                     case GameState.PLAYING:
+                        Time.timeScale = 1;
                         break;
                     case GameState.PAUSED:
                         break;
@@ -88,6 +90,7 @@ public class GameStateManager : MonoBehaviour
                     case GameState.DIALOG:
                         break;
                     case GameState.PLAYING:
+                        Time.timeScale = 1;
                         break;
                     case GameState.PAUSED:
                         break;

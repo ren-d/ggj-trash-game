@@ -50,12 +50,20 @@ public class InventoryManager : MonoBehaviour
             if(inventory[i].item.name == item.name)
             {
                 inventory[i].isCollected = true;
+                PlayerPrefs.SetInt(item.name, 1);
             }
         }
         Destroy(item);
         
     }
+    private void OnApplicationQuit()
+    {
 
+        for (int i = 0; i < inventory.Length; i++)
+        {
+            PlayerPrefs.SetInt(inventory[i].item.name, 0);
+        }
+    }
     private void Update()
     {
 
@@ -89,8 +97,11 @@ public class InventoryManager : MonoBehaviour
                     }
                     break;
                 case GameStateManager.GameScene.TRASHYARD:
-
                     inventory[i].spawned = false;
+                    if (PlayerPrefs.GetInt(inventory[i].item.name) == 1)
+                    {
+                        Destroy(GameObject.Find(inventory[i].item.name));
+                    }
                     break;
             }
 

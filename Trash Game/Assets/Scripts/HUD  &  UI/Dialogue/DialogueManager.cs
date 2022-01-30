@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using TMPro;
 public class DialogueManager : MonoBehaviour
 {
-    public Text nameText;
-    public Text dialogueText;
+    public TMP_Text nameText;
+    public TMP_Text dialogueText;
     public Animator animator;
 
     private Queue<string> sentences;
@@ -14,10 +14,14 @@ public class DialogueManager : MonoBehaviour
     void Start()
     {
         sentences = new Queue<string>();
+
     }
 
     public void StartDialogue(Dialogue dialogue)
     {
+        nameText = GameObject.Find("npcName").GetComponent<TMP_Text>();
+        dialogueText = GameObject.Find("npcDialog").GetComponent<TMP_Text>();
+        animator = GameObject.Find("DialogBox").GetComponent<Animator>();
         animator.SetBool("isOpen", true);
         FindObjectOfType<GameStateManager>().setGameState(GameStateManager.GameState.DIALOG);
         nameText.text = dialogue.name;
