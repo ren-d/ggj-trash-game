@@ -15,7 +15,7 @@ public class DialogueTrigger : MonoBehaviour
 
     public void TriggerDialogue()
     {
-        switch(found)
+        switch (found)
         {
             case true:
                 FindObjectOfType<DialogueManager>().StartDialogue(pickupDialogue);
@@ -27,15 +27,15 @@ public class DialogueTrigger : MonoBehaviour
 
             case false:
                 FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
-                    
+
                 break;
         }
-       
+
     }
 
     private void Update()
     {
-        if(Input.GetKey(KeyCode.E) && inRange)
+        if (Input.GetKey(KeyCode.E) && inRange)
         {
             TriggerDialogue();
         }
@@ -43,7 +43,7 @@ public class DialogueTrigger : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(!hasItem)
+        if (!hasItem)
         {
             if (other.name == "Player")
             {
@@ -63,7 +63,7 @@ public class DialogueTrigger : MonoBehaviour
 
             }
         }
-        
+
     }
 
     private void OnTriggerExit(Collider other)
