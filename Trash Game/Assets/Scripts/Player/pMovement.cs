@@ -32,7 +32,7 @@ public class pMovement : MonoBehaviour
     {
         Walk();
 
-        Jump(); 
+        //Jump(); 
     }
 
     private void HandleInput()
@@ -41,16 +41,21 @@ public class pMovement : MonoBehaviour
         vertical = Input.GetAxisRaw("Vertical");
         
         walkDirection = new Vector3(horizontal, 0, vertical);
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Jump();
+        }
     }
 
     private void Walk()
     {
         Vector3 moveVector = transform.TransformDirection(walkDirection.normalized * walkSpeed * Time.deltaTime);
-        playerRigidbody.velocity = new Vector3(moveVector.z, playerRigidbody.velocity.y, moveVector.x);
+        playerRigidbody.velocity = new Vector3(moveVector.x, playerRigidbody.velocity.y, moveVector.z);
     }
 
     private void Jump()
     {
-
+        playerRigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
     }
 }
